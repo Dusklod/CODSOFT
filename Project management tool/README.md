@@ -6,9 +6,8 @@ A robust project management solution designed to streamline workflow and enhance
 ## Tech Stack
 ### Frontend
 - React 18 with TypeScript
-- Next.js 13 with App Router
+- Next.js 15
 - TailwindCSS/Shadcn UI
-- Redux Toolkit
 - Socket.io client
 - React DnD for drag-drop
 - Chart.js for analytics
