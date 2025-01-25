@@ -9,9 +9,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-      },
+        'text': '#09110c',
+        'background': '#fbfefc',
+        'primary': '#2fd062',
+        'secondary': '#8beaa9',
+        'accent': '#55f7e4',
+       },
+       
     },
   },
   plugins: [],
