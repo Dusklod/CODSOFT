@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to bottom right, #1f2937, #2d3748);
+            font-family: Arial, sans-serif;
+        }
+        .calculator {
+            background: #2d3748;
+            border-radius: 16px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            width: 320px;
+        }
+        .display {
+            background: #1f2937;
+            color: white;
+            font-size: 2em;
+            text-align: right;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            min-height: 50px;
+        }
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+        button {
+            padding: 15px;
+            font-size: 1.5em;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .number { background: #4a5568; color: white; }
+        .operator { background: #3182ce; color: white; }
+        .clear { background: #e53e3e; color: white; }
+        .equal { background: #38a169; color: white; grid-row: span 2; }
+        button:hover { opacity: 0.8; }
+        #addition {
+            grid-row: span 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div class="display" id="display">0</div>
+        <div class="buttons">
+            <button class="clear" onclick="clearDisplay()">C</button>
+            <button class="operator" onclick="handleOperator('/')">÷</button>
+            <button class="operator" onclick="handleOperator('*')">×</button>
+            <button class="operator" onclick="handleOperator('-')">-</button>
+            <button class="number" onclick="handleNumber('7')">7</button>
+            <button class="number" onclick="handleNumber('8')">8</button>
+            <button class="number" onclick="handleNumber('9')">9</button>
+            <button class="operator" id="addition" onclick="handleOperator('+')">+</button>
+            <button class="number" onclick="handleNumber('4')">4</button>
+            <button class="number" onclick="handleNumber('5')">5</button>
+            <button class="number" onclick="handleNumber('6')">6</button>
+            <button class="number" onclick="handleNumber('1')">1</button>
+            <button class="number" onclick="handleNumber('2')">2</button>
+            <button class="number" onclick="handleNumber('3')">3</button>
+            <button class="equal" onclick="calculate()">=</button>
+            <button class="number" onclick="handleNumber('0')" style="grid-column: span 2;">0</button>
+            <button class="number" onclick="handleDecimal()">.</button>
+        </div>
+    </div>
+    <script>
+        let display = document.getElementById("display");
+        let equation = "";
+        
+        function handleNumber(number) {
+            if (display.innerText === "0") {
+                display.innerText = number;
+            } else {
+                display.innerText += number;
+            }
+        }
+        
+        function handleOperator(operator) {
+            if (display.innerText !== "0") {
+                equation = display.innerText + " " + operator + " ";
+                display.innerText = "0";
+            }
+        }
+        
+        function handleDecimal() {
+            if (!display.innerText.includes(".")) {
+                display.innerText += ".";
+            }
+        }
+        
+        function calculate() {
+            if (equation && display.innerText) {
+                let result = eval(equation + display.innerText);
+                display.innerText = result;
+                equation = "";
+            }
+        }
+        
+        function clearDisplay() {
+            display.innerText = "0";
+            equation = "";
+        }
+    </script>
+</body>
+</html>
