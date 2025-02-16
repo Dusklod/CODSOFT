@@ -15,18 +15,10 @@
   - A responsive landing page design
   - Built with HTML, CSS, and JavaScript
 
-### Level 2 Projects
-- **Job Board** (`/JobBoard`)
-  - Full-stack job board application
-  - Built with Node.js, React, Next.js, PostgreSQL
-  - Features Prisma ORM and Auth.js for authentication
 
-- **Quiz Maker** (`/QuizMaker`)
-  - Online quiz creation platform
-  - Allows users to create, manage, and share quizzes
 
 ### Level 3 Project
-- **Project Management Tool** (`/ProjectManagementTool`)
+- **E-commerce Website** ()
   - Comprehensive project management application
   - Features task management, team collaboration, and project tracking
 
